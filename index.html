@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ARC Study</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app">
+            <aside id="sidebar">
+                <h1>ARC Study</h1>
+                <button id="newRunBtn" class="primary">+ new run</button>
+                <input id="searchBox" type="search" placeholder="search for a run">
+                <ul id="runList"></ul>
+                    <div class="sidebar-footer">
+                        <button id="exportBtn">export a run</button>
+                        <button id="importBtn">import a run</button>
+                        <input id="importFile" type="file" accept="application/json" hidden>
+                    </div>
+            </aside>
+            <main id="main">
+                <div id="emptyState">no run selected... u can record a new run or look at ur past raids</div>
+                <section id="runView" hidden>
+                    <div class="run-header">
+                        <input id="runTitle" class="title-input" placeholder="run title (ex: blue gate matriarch run)">
+                        <button id="deleteRunBtn" class="danger">"delete run (very bad)"</button>
+                    </div>
+                    <div class="run-meta">
+                        <label>map<input id="runMap" placeholder="ex: stella montis"></label>
+                        <label>raid start<input id="runStart" type="datetime-local"></label>
+                        <label>outcome
+                            <select id="runOutcome">
+                                <option value="inProgress">in progress</option>
+                                <option value="extracted">extracted</option>
+                                <option value="died">knocked out</option>
+                                <option value="abandoned">quit run</option>
+                            </select>
+                        </label>
+                    </div>
+                    <label class="block">run notes
+                        <textarea id="runNotes" rows="3" placeholder="what happened in your raid? loot gained, people met... anything!"></textarea>
+                    </label>
+                    <h2>journal</h2>
+                    <div id="composer">
+                        <textarea id="entryText"
+                    </div>
+                </section>
+        </div>
+    </body>
+</html>
